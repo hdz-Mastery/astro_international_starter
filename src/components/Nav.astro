@@ -1,0 +1,11 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<ul>
+  <li><a href={`/${lang}/`}>{t('nav.home')}</a></li>
+  <li><a href={`/${lang}/about/`}>{t('nav.about')}</a></li>
+  <li><a href="https://twitter.com/">{t('nav.twitter')}</a></li>
+</ul> 
