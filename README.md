@@ -1,4 +1,4 @@
-# 🚀 Astro Portfolio Starter
+# 🚀 Astro International Starter
 
 <p align="center">
   <img src="src/assets/astro.svg" alt="Astro Logo" width="100" />
@@ -82,7 +82,7 @@
 
 ---
 
-## 🛠️ Personaliza tu porfolio
+## 🛠️ Personaliza tu pagina
 
 - Agrega más páginas en `src/pages/en/` y `src/pages/es/`.
 - Añade más claves de traducción en `src/i18n/ui.ts`.
@@ -105,5 +105,5 @@
 > Basado en la receta oficial de internacionalización de Astro v4+. ¡Listo para clonar y usar como base para tu porfolio multilenguaje!
 
 <p align="center">
-  <b>Hecho con ❤️ por la comunidad Astro</b>
+  <b>Hecho con ❤️. ¡Espero les funcione!</b>
 </p>
