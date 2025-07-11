@@ -102,7 +102,7 @@
 
 ## 🙌 Créditos
 
-> Basado en la receta oficial de internacionalización de Astro v4+. ¡Listo para clonar y usar como base para tu porfolio multilenguaje!
+> Basado en la receta oficial de internacionalización de Astro v4+. ¡Listo para clonar y usar como base para tu pagina multilenguaje!
 
 <p align="center">
   <b>Hecho con ❤️. ¡Espero les funcione!</b>
