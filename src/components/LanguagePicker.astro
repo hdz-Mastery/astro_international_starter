@@ -1,10 +1,39 @@
 ---
 import { languages } from '../i18n/ui';
 ---
-<ul>
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a href={`/${lang}/`}>{label}</a>
-    </li>
-  ))}
-</ul> 
+<div class="inline-block relative">
+  <label for="lang-picker" class="sr-only">Seleccionar idioma</label>
+  <span class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" class="text-indigo-400"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.85.63-3.55 1.69-4.9l11.21 11.21C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.41 0 8 3.59 8 8 0 1.85-.63 3.55-1.69 4.9z" fill="currentColor"/></svg>
+  </span>
+  <select
+    id="lang-picker"
+    class="pl-10 pr-8 py-2 rounded-full border border-gray-300 bg-white shadow text-gray-700 font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all min-w-[110px] appearance-none"
+  >
+    {Object.entries(languages).map(([lang, label]) => (
+      <option value={lang} selected={typeof window !== 'undefined' && window.location.pathname.split('/')[1] === lang}>{label}</option>
+    ))}
+  </select>
+  <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+    <svg width="16" height="16" fill="none" viewBox="0 0 20 20"><path d="M7.293 7.293a1 1 0 011.414 0L10 8.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" fill="gray"/></svg>
+  </span>
+  <script>
+    const select = document.getElementById('lang-picker');
+    if (select) {
+      select.addEventListener('change', (e) => {
+        const lang = (e.target as HTMLSelectElement).value;
+        window.location.pathname = `/${lang}/`;
+      });
+    }
+  </script>
+</div>
+<style is:global>
+  select#lang-picker {
+    cursor: pointer;
+  }
+  select#lang-picker option:checked {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: bold;
+  }
+</style>
